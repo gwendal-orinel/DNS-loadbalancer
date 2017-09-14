@@ -14,4 +14,11 @@ RUN apt-get update -y && \
         unzip consul.zip && unzip consul-template.zip && \
         rm *.zip && mv consul* /bin/
 
+#consul persist storage
+VOLUME /consul
+RUN chgrp -R 0 /consul && chmod -R g+rwX /consul
+
+#consul data
+COPY data/config.json /consul/
+
 CMD /bin/consul agent --config-file /consul/config.json -retry-join 192.168.0.2 -advertise 192.168.0.3
