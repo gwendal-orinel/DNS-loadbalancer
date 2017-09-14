@@ -1,0 +1,10 @@
+view "National7"{
+        match-clients { any; };
+
+        zone "dev.n7.integ.dns-orange.fr" {
+                type master;
+                file "/etc/bind/zones/db.fr";
+                notify yes;
+                allow-transfer{ 192.168.0.4; };
+        };
+};
