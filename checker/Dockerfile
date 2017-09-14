@@ -15,7 +15,7 @@ RUN apt-get update -y && \
         rm *.zip && mv consul* /bin/
 
 #consul persist storage
-VOLUME /consul
+VOLUME checker:/consul
 RUN chgrp -R 0 /consul && chmod -R g+rwX /consul
 
 #consul data
