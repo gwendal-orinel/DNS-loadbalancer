@@ -6,10 +6,27 @@ docker network create --subnet=192.168.0.0/24 national7
 ```
 
 ## Build containers
+- Core
+```
+docker build https://github.com/gwendal-orinel-pro/docker.git#master:core -t core
+```
 
+- Checker
+```
+docker build https://github.com/gwendal-orinel-pro/docker.git#master:checker -t checker
+```
+
+- Dnspub
+```
+docker build https://github.com/gwendal-orinel-pro/docker.git#master:dnspub -t dnspub
+```
+
+- Supermonkey
+```
+docker build https://github.com/gwendal-orinel-pro/docker.git#master:supermonkey -t supermonkey
+```
 
 ## Run containers:
-
 - Core
 ```
 docker run -d --name=core --net=national7 --ip 192.168.0.2 -v /var/docker/core/bind:/etc/bind:z -v /var/docker/core/consul:/consul:z core
