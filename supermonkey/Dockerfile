@@ -29,4 +29,7 @@ RUN cd /var/www/ && rm -R html && tar xvf webfiles.tar && rm webfiles.tar
 
 RUN a2enmod proxy proxy_http rewrite
 
+#docker sock (for recreate container)
+VOLUME /var/run/docker.sock:/var/run/docker.sock
+
 CMD ["/bin/bash", "-c", "/etc/init.d/apache2 start && /bin/consul agent --config-file /consul/config.json"]
