@@ -16,7 +16,8 @@ RUN apt-get update -y && \
   
 #consul persist storage
 VOLUME /consul
-RUN mkdir /consul/data
+
+RUN mkdir /consul/data /etc/bind/zones
 
 #consul data
 COPY data/config.json /consul/
