@@ -19,6 +19,10 @@ RUN chgrp -R 0 /consul && chmod -R g+rwX /consul
 COPY data/config.json /consul/
 COPY data/000-default.conf /etc/apache2/sites-available/
 
+#regenerator files
+RUN mkdir /consul/scripts/
+COPY data/scripts/* /consul/scripts/
+
 #web files
 COPY data/webfiles.tar /var/www/
 RUN cd /var/www/ && rm -R html && tar xvf webfiles.tar && rm webfiles.tar
