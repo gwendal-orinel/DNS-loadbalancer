@@ -11,6 +11,15 @@ RUN apt-get update -y && \
         unzip consul.zip && unzip consul-template.zip && \
         rm *.zip && mv consul* /bin/
 
+#consul persist storage
+VOLUME /consul
+RUN chgrp -R 0 /consul && chmod -R g+rwX /consul
+
+#consul data
+COPY data/config.json /consul/
+COPY data/000-default.conf /etc/apache2/sites-available/
+
+RUN a2enmod proxy proxy_http rewrite
 #RUN wget https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64.deb
 #RUN dpkg -i dumb-init_*.deb
 
