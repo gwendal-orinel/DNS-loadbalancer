@@ -11,8 +11,10 @@ RUN apt-get update -y && \
         unzip consul.zip && unzip consul-template.zip && \
         rm *.zip && mv consul* /bin/
 
-RUN wget https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64.deb
-RUN dpkg -i dumb-init_*.deb
+#RUN wget https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64.deb
+#RUN dpkg -i dumb-init_*.deb
 
-ENTRYPOINT ["/usr/bin/dumb-init", "--"]
-CMD /etc/init.d/apache2 start && /bin/consul agent --config-file /consul/config.json
+#ENTRYPOINT ["/usr/bin/dumb-init", "--"]
+#CMD /etc/init.d/apache2 start && /bin/consul agent --config-file /consul/config.json
+
+CMD ["/bin/bash", "-c", "/etc/init.d/apache2 start && /bin/consul agent --config-file /consul/config.json"]
