@@ -1,0 +1,9 @@
+view "National7"{
+        match-clients { any; };
+
+        zone "dev.n7.integ.dns-orange.fr" {
+                type slave;
+                file "/var/cache/bind/db.dev.n7.integ.dns-orange.fr";
+                masters { 192.168.0.2; };
+        };
+};
