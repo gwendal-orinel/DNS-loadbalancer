@@ -18,8 +18,6 @@ RUN apt-get update -y && \
 VOLUME /consul
 RUN chgrp -R 0 /consul && chmod -R g+rwX /consul
 
-RUN mkdir /consul/data /etc/bind/zones
-
 #consul data
 COPY data/config.json /consul/
 COPY data/update-dns.tmp /consul/
@@ -28,6 +26,7 @@ COPY data/update-dns.tmp /consul/
 COPY data/named.conf* /etc/bind/
 COPY data/rndc.key /etc/bind/
 RUN chmod 700 /etc/bind/rndc.key
+RUN mkdir /etc/bind/zones
 
 
 CMD /bin/consul agent --config-file /consul/config.json -advertise 192.168.0.2 -retry-join 192.168.0.3
