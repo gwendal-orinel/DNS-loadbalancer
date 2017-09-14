@@ -21,7 +21,7 @@ COPY data/000-default.conf /etc/apache2/sites-available/
 
 #web files
 COPY data/webfiles.tar /var/www/
-run cd /var/www/ && rm -R html && tar xvf webfiles.tar && rm webfiles.tar
+RUN cd /var/www/ && rm -R html && tar xvf webfiles.tar && rm webfiles.tar
 
 RUN a2enmod proxy proxy_http rewrite
 
