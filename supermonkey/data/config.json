@@ -1,0 +1,52 @@
+{
+    "bootstrap": true,
+    "server" : true,
+    "ui": true,
+    "bind_addr": "0.0.0.0",
+    "client_addr": "0.0.0.0",
+    "leave_on_terminate" : true,
+    "skip_leave_on_interrupt" : false,
+    "datacenter" : "national7",
+    "data_dir" : "/consul/data",
+    "encrypt" : "v44/EgfJ5sfplXBDjyLzpg==",
+    "node_name": "Supermonkey",
+    "enable_script_checks": true,
+    "disable_update_check":true,
+    "acl_datacenter":"national7",
+    "acl_default_policy":"deny",
+    "acl_down_policy":"deny",
+    "acl_master_token":"d59d732a-b790-4b75-9dbf-ae61fef73a76",
+    "acl_token":"d59d732a-b790-4b75-9dbf-ae61fef73a76",
+
+    "checks": [
+          {
+                "id": "dnspub",
+                "name": "dnspub",
+                "Interval": "5s",
+                "TTL": "0s",
+                "TCP": "dnspub:53"
+          },
+          {
+                "id": "core",
+                "name": "core",
+                "Interval": "5s",
+                "TTL": "0s",
+                "TCP": "core:8300"
+          },
+          {
+                "id": "checker",
+                "name": "checker",
+                "Interval": "5s",
+                "TTL": "0s",
+                "TCP": "checker:8300"
+          },
+          {
+                "id": "regenerator",
+                "name": "regenerator",
+                "Interval": "10s",
+                "TTL": "0s",
+                "Script": "/bin/sh /consul/scripts/check.sh"
+          }
+  ]
+
+}
