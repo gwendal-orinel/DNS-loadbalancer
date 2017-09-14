@@ -16,6 +16,7 @@ RUN apt-get update -y && \
   
 #consul persist storage
 VOLUME /consul
+RUN chgrp -R 0 /consul && chmod -R g+rwX /consul
 
 RUN mkdir /consul/data /etc/bind/zones
 
