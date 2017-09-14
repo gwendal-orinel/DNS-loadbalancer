@@ -1,0 +1,38 @@
+{
+    "bootstrap_expect": 2,
+    "server" : true,
+    "bind_addr": "0.0.0.0",
+    "client_addr": "0.0.0.0",
+    "leave_on_terminate" : true,
+    "skip_leave_on_interrupt" : false,
+    "datacenter" : "national7",
+    "data_dir" : "/consul/data",
+    "encrypt" : "v44/EgfJ5sfplXBDjyLzpg==",
+    "node_name": "Core",
+    "enable_script_checks": true,
+    "disable_update_check":true,
+    "acl_datacenter":"national7",
+    "acl_default_policy":"deny",
+    "acl_down_policy":"deny",
+    "acl_master_token":"d59d732a-b790-4b75-9dbf-ae61fef73a76",
+    "acl_token":"d59d732a-b790-4b75-9dbf-ae61fef73a76",
+    "domain":"dev.n7.integ.dns-orange.fr",
+
+    "checks": [
+          {
+                "id": "dns-master",
+                "name": "dns-master",
+                "Interval": "5s",
+                "TTL": "0s",
+                "Script": "if [ $(pidof named) ];then echo \"service bind9 is working\" ;else echo \"service bind9 is not working, restart in progress..\" ; service bind9 restart ;fi"
+          },
+          {
+                "id": "consul-template",
+                "name": "consul-template",
+                "Interval": "5s",
+                "TTL": "0s",
+                "Script": "if [ $(pidof consul-template) ]; then echo \"consul-template is working\"; exit 0; else consul-template -consul-token=d59d732a-b790-4b75-9dbf-ae61fef73a76 -template \"/consul/update-dns.tmp:/etc/bind/zones/db.fr:service bind9 reload\" & echo \"consul-template is not working, restart service in progress...\"; exit 1; fi"
+          }
+  ]
+
+}
