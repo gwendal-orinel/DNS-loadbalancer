@@ -18,7 +18,7 @@
     "acl_master_token":"d59d732a-b790-4b75-9dbf-ae61fef73a76",
     "acl_token":"d59d732a-b790-4b75-9dbf-ae61fef73a76",
     "ports": {
-      "http": 443
+      "http": 8501
     },
 
     "checks": [
