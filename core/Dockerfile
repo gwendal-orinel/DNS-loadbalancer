@@ -25,7 +25,7 @@ COPY data/update-dns.tmp /consul/
 #bind data
 COPY data/named.conf* /etc/bind/
 COPY data/rndc.key /etc/bind/
-RUN chmod 700 /etc/bind/rndc.key
+RUN chmod 700 /etc/bind/rndc.key && chown bind:bind /etc/bind/rndc.key
 RUN mkdir /etc/bind/zones
 
 
