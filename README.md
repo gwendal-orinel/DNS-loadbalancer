@@ -44,6 +44,6 @@ docker run -d --name=dnspub -p 53:53 -p 53:53/udp --net=dnsproject --ip 192.168.
 
 - Supermonkey
 ```
-docker run -d --name=supermonkey -h supermonkey --add-host "core:192.168.0.2" --add-host "checker:192.168.0.3" --add-host "dnspub:192.168.0.4" --net=dnsproject --ip=192.168.0.5 -p 80:80 -p 8500:8500 -p 443:443 -v /var/run/docker.sock:/var/run/docker.sock supermonkey
+docker run -d --name=supermonkey -h supermonkey --add-host "core:192.168.0.2" --add-host "checker:192.168.0.3" --add-host "dnspub:192.168.0.4" --net=dnsproject --ip=192.168.0.5 -p 80:80 -p 8500:8500 -p 443:8501 -v /var/run/docker.sock:/var/run/docker.sock supermonkey
 ```
 
