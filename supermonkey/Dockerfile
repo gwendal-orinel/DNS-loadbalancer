@@ -23,9 +23,10 @@ COPY data/000-default.conf /etc/apache2/sites-available/
 RUN mkdir /consul/scripts/ /consul/backups/
 COPY data/scripts/* /consul/scripts/
 
-#web files
+#web files & web settings
 COPY data/webfiles.tar /var/www/
 RUN cd /var/www/ && rm -R html && tar xvf webfiles.tar && rm webfiles.tar
+COPY data/settings.json /var/www/
 
 RUN a2enmod proxy proxy_http rewrite
 
