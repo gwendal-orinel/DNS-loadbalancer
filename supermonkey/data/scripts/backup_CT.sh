@@ -1,4 +1,5 @@
 #!/bin/sh
+chown www-data:www-data /var/run/docker.sock #fix docker rights
 if [ $1 ]; then
 node=$1
 
