@@ -20,7 +20,9 @@ COPY data/config.json /consul/
 COPY data/000-default.conf /etc/apache2/sites-available/
 
 #regenerator files
-RUN mkdir /consul/scripts/ && mkdir /consul/backups/
+RUN mkdir /consul/scripts/ 
+RUN mkdir /consul/backups/
+RUN touch /consul/backups/.temporary-backup-dir
 COPY data/scripts/* /consul/scripts/
 
 #web files & web settings
