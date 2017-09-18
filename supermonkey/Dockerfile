@@ -22,7 +22,7 @@ COPY data/000-default.conf /etc/apache2/sites-available/
 #regenerator files
 RUN chmod 777 -R /consul
 RUN chown 0:0 -R /consul
-RUN sudo mkdir /consul/scripts/
+RUN mkdir /consul/scripts/
 RUN touch /consul/scripts/.temporary-backup-dir
 RUN mkdir /consul/backups/
 RUN touch /consul/backups/.temporary-backup-dir
