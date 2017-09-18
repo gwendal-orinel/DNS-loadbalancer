@@ -9,7 +9,7 @@ if [ $status != "passing" ]; then
 echo $node " -> Down :" $(date)
 echo $(date +%Y-%m-%d' '%H:%M)";down;" $node >> '/consul/supermonkey_history.log';
 
-bash /consul/scripts/backup_CT.sh $node
+#bash /consul/scripts/backup_CT.sh $node
 bash /consul/scripts/delete_CT.sh $node
 bash /consul/scripts/run_CT.sh $node
 else
