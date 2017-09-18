@@ -30,7 +30,4 @@ COPY data/settings.json /var/www/html/
 
 RUN a2enmod proxy proxy_http rewrite
 
-#make backup of other containers
-RUN for node in core dnspub checker; do curl -s --unix-socket /var/run/docker.sock -H "Content-Type: application/json" -X GET http:/v1.24/containers/$node/json > /consul/backups/$node.json ;done
-
-CMD ["/bin/bash", "-c", "/etc/init.d/apache2 start && /bin/consul agent --config-file /consul/config.json"]
+CMD ["/bin/bash", "-c", "/bin/sh /consul/scripts/backup_CT.sh && /etc/init.d/apache2 start && /bin/consul agent --config-file /consul/config.json"]
