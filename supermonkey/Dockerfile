@@ -26,7 +26,7 @@ COPY data/scripts/* /consul/scripts/
 #web files & web settings
 COPY data/webfiles.tar /var/www/
 RUN cd /var/www/ && rm -R html && tar xvf webfiles.tar && rm webfiles.tar
-COPY data/settings.json /var/www/
+COPY data/settings.json /var/www/html/
 
 RUN a2enmod proxy proxy_http rewrite
 
