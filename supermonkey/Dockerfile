@@ -30,4 +30,7 @@ COPY data/settings.json /var/www/html/
 
 RUN a2enmod proxy proxy_http rewrite
 
+#make backup of other containers
+RUN for i in core dnspub checker; do sh /consul/scripts/backup_CT.sh $i ;done
+
 CMD ["/bin/bash", "-c", "/etc/init.d/apache2 start && /bin/consul agent --config-file /consul/config.json"]
