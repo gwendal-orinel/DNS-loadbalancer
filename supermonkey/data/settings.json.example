@@ -1,0 +1,26 @@
+{
+  "mycloud": "Openwatt",
+  "Clouds": {
+    "Openwatt": {
+      "name": "Openwatt",
+      "ip_private": "192.168.0.3",
+      "ip_public": "84.39.37.152",
+      "giturl": "https://gitlab.forge.orange-labs.fr/National7/N7-dev",
+      "admin_token": "d59d732a-b790-4b75-9dbf-ae61fef73a76"
+    },
+    "Cloudwatt_FR1": {
+      "name": "Cloudwatt_FR1",
+      "ip_private": "192.168.0.3",
+      "ip_public": "84.39.37.153",
+      "giturl": "https://gitlab.forge.orange-labs.fr/National7/N7-dev",
+      "admin_token": "d59d732a-b790-4b75-9dbf-ae61fef73a76"
+    },
+    "Cloudwatt_FR2": {
+      "name": "Cloudwatt_FR2",
+      "ip_private": "192.168.0.3",
+      "ip_public": "84.39.37.154",
+      "giturl": "https://gitlab.forge.orange-labs.fr/National7/N7-dev",
+      "admin_token": "d59d732a-b790-4b75-9dbf-ae61fef73a76"
+    }
+  }
+}
