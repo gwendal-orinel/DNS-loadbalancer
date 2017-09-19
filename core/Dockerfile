@@ -20,7 +20,7 @@ RUN chgrp -R 0 /consul && chmod -R g+rwX /consul
 
 #consul data
 COPY data/update-dns.tmp /consul/
-COPY data/config2.json /consul/
+COPY data/config.json /consul/config2.json
 RUN cat /consul/config2.json | jq ' . | .watches[0].handler = "curl -X PUT -d \""+.domain+"\" \"http://localhost:8500/v1/kv/CONFIG/DNS/domain?token="+.acl_token+"\"" ' > /consul/config.json && rm config2.json
 
 #bind data
