@@ -33,6 +33,13 @@
                 "TTL": "0s",
                 "Script": "if [ $(pidof consul-template) ]; then echo \"consul-template is working\"; exit 0; else consul-template -consul-token=d59d732a-b790-4b75-9dbf-ae61fef73a76 -template \"/consul/update-dns.tmp:/etc/bind/zones/db.fr:service bind9 reload\" & echo \"consul-template is not working, restart service in progress...\"; exit 1; fi"
           }
+  ],
+  "watches": [
+    {
+        "type": "key",
+        "key": "CONFIG/DNS/domain",
+        "handler": ""
+    }
   ]
 
 }
