@@ -1,5 +1,9 @@
 #!/bin/sh
-chown www-data:www-data /var/run/docker.sock #fix docker rights
+#init log file and fix php/docker permissions
+touch /consul/supermonkey_history.log
+chown www-data:www-data /consul/supermonkey_history.log
+chown www-data:www-data /var/run/docker.sock
+
 if [ $1 ]; then
 node=$1
 
