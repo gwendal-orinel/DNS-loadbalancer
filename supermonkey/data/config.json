@@ -16,7 +16,7 @@
     "acl_default_policy":"deny",
     "acl_down_policy":"deny",
     "acl_master_token":"d59d732a-b790-4b75-9dbf-ae61fef73a76",
-    "acl_token":"d59d732a-b790-4b75-9dbf-ae61fef73a76",
+    "acl_token":"anonymous",
 
     "checks": [
           {
