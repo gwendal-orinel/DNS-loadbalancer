@@ -21,7 +21,7 @@ RUN chgrp -R 0 /consul && chmod -R g+rwX /consul
 #consul data
 COPY data/update-dns.tmp /consul/
 COPY data/config.json /consul/config2.json
-RUN cat /consul/config2.json | jq ' . | .watches[0].handler = "curl -X PUT -d \""+.domain+"\" \"http://localhost:8500/v1/kv/CONFIG/DNS/domain?token="+.acl_token+"\"" ' > /consul/config.json
+ENV EDIT_CONF_CONSUL=$(cat /consul/config2.json | jq ' . | .watches[0].handler = "curl -X PUT -d \""+.domain+"\" \"http://localhost:8500/v1/kv/CONFIG/DNS/domain?token="+.acl_token+"\"" ' > /consul/config.json)
 #rm /consul/config2.json
 
 #bind data
@@ -30,4 +30,4 @@ COPY data/rndc.key /etc/bind/
 RUN chmod 700 /etc/bind/rndc.key && chown bind:bind /etc/bind/rndc.key
 RUN mkdir /etc/bind/zones
 
-CMD ["/bin/bash", "-c", "/etc/init.d/bind9 start && /bin/consul agent --config-file /consul/config.json -advertise 192.168.0.2 -retry-join 192.168.0.3"] 
+CMD ["/bin/bash", "-c", "$EDIT_CONF_CONSUL && /etc/init.d/bind9 start && /bin/consul agent --config-file /consul/config.json -advertise 192.168.0.2 -retry-join 192.168.0.3"] 
