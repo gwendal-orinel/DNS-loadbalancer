@@ -22,28 +22,28 @@
           {
                 "id": "dnspub",
                 "name": "dnspub",
-                "Interval": "5s",
+                "Interval": "2s",
                 "TTL": "0s",
                 "TCP": "dnspub:53"
           },
           {
                 "id": "core",
                 "name": "core",
-                "Interval": "5s",
+                "Interval": "2s",
                 "TTL": "0s",
                 "TCP": "core:8300"
           },
           {
                 "id": "checker",
                 "name": "checker",
-                "Interval": "5s",
+                "Interval": "2s",
                 "TTL": "0s",
                 "TCP": "checker:8300"
           },
           {
                 "id": "regenerator",
                 "name": "regenerator",
-                "Interval": "10s",
+                "Interval": "2s",
                 "TTL": "0s",
                 "Script": "/bin/sh /consul/scripts/check.sh"
           }
