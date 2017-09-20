@@ -28,7 +28,4 @@ COPY data/rndc.key /etc/bind/
 RUN chmod 700 /etc/bind/rndc.key && chown bind:bind /etc/bind/rndc.key
 RUN mkdir /etc/bind/zones
 
-#init script
-COPY data/init.sh /consul/
-
-CMD ["/bin/bash", "-c", "/bin/consul agent --config-file /consul/config.json -advertise 192.168.0.2 -retry-join 192.168.0.3 & /bin/bash /consul/init.sh"] 
+CMD ["/bin/bash", "-c", "/etc/init.d/bind9 start && /bin/consul agent --config-file /consul/config.json -advertise 192.168.0.2 -retry-join 192.168.0.3"] 
