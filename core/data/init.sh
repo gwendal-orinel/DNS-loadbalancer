@@ -6,3 +6,7 @@ $DOMAINKEY
 
 #start apache service
 /etc/init.d/bind9 start
+
+
+#Keep container launched & views logs
+/bin/consul monitor
