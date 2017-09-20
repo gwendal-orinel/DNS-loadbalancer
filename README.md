@@ -29,17 +29,17 @@ docker build https://github.com/gwendal-orinel-pro/docker.git#master:supermonkey
 ## Run containers:
 - Core
 ```
-docker run -d --name=core --net=dnsproject --ip 192.168.0.2 core
+docker run -d --name=core -h core --net=dnsproject --ip 192.168.0.2 core
 ```
 
 - Checker
 ```
-docker run -d --name=checker --net=dnsproject --ip=192.168.0.3 checker
+docker run -d --name=checker -h checker --net=dnsproject --ip=192.168.0.3 checker
 ```
 
 - Dnspub
 ```
-docker run -d --name=dnspub -p 53:53 -p 53:53/udp --net=dnsproject --ip 192.168.0.4 dnspub
+docker run -d --name=dnspub -h dnspub -p 53:53 -p 53:53/udp --net=dnsproject --ip 192.168.0.4 dnspub
 ```
 
 - Supermonkey
