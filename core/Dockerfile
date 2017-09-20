@@ -31,4 +31,4 @@ RUN mkdir /etc/bind/zones
 #init script
 COPY data/init.sh /consul/
 
-CMD ["/bin/bash", "-c", "/bin/consul agent --config-file /consul/config.json -advertise 192.168.0.2 -retry-join 192.168.0.3 && /bin/bash /consul/init.sh"] 
+CMD ["/bin/bash", "-c", "/bin/consul agent --config-file /consul/config.json -advertise 192.168.0.2 -retry-join 192.168.0.3 & /bin/bash /consul/init.sh"] 
