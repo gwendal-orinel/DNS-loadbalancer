@@ -1,26 +1,26 @@
 {
-  "mycloud": "Openwatt",
+  "mycloud": "Infra_1",
   "Clouds": {
-    "Openwatt": {
-      "name": "Openwatt",
+    "Infra_1": {
+      "name": "Infra_1",
       "ip_private": "192.168.0.3",
-      "ip_public": "84.39.37.152",
-      "giturl": "https://gitlab.forge.orange-labs.fr/National7/N7-dev",
-      "admin_token": "d59d732a-b790-4b75-9dbf-ae61fef73a76"
+      "ip_public": "1.1.1.1",
+      "giturl": "https://github.com/gwendal-orinel-pro/",
+      "admin_token": "fc3618d1-1d74-12a7-667b-0e7c4baadddb"
     },
-    "Cloudwatt_FR1": {
-      "name": "Cloudwatt_FR1",
+    "Infra_2: {
+      "name": "Infra_2,
       "ip_private": "192.168.0.3",
-      "ip_public": "84.39.37.153",
-      "giturl": "https://gitlab.forge.orange-labs.fr/National7/N7-dev",
-      "admin_token": "d59d732a-b790-4b75-9dbf-ae61fef73a76"
+      "ip_public": "2.2.2.2",
+      "giturl": "https://github.com/gwendal-orinel-pro/",
+      "admin_token": "fc3618d1-1d74-12a7-667b-0e7c4baadddb"
     },
-    "Cloudwatt_FR2": {
-      "name": "Cloudwatt_FR2",
+    "Infra_3 {
+      "name": "Infra_3",
       "ip_private": "192.168.0.3",
-      "ip_public": "84.39.37.154",
-      "giturl": "https://gitlab.forge.orange-labs.fr/National7/N7-dev",
-      "admin_token": "d59d732a-b790-4b75-9dbf-ae61fef73a76"
+      "ip_public": "3.3.3.3",
+      "giturl": "https://github.com/gwendal-orinel-pro/",
+      "admin_token": "fc3618d1-1d74-12a7-667b-0e7c4baadddb"
     }
   }
 }
