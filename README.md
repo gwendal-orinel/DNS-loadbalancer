@@ -60,7 +60,7 @@ curl \
   "Name": "service1",
   "tags": [
     "ttl 0",
-	"active"
+    "active"
   ],
   "Address": "8.8.4.4",
   "Port": 53,
@@ -71,6 +71,10 @@ curl \
   }
 }' http://$address:8500/v1/agent/service/register?token=$TOKEN ;done
 ```
+>- ID must be different for each server
+>- Name must be same for each server, it will become the name of subdomain
+>- Change Tag "ttl 0" for your service's TTL desired value, configured by the dns
+>- Change Tag "active" to "passive" for make active/passive strategy. If neither of both is specified, active profile is applied
 
 ## Testing service
 `dig ID_OF_YOUR_SERVICE.YOUR_DOMAIN_NAME_CONFIGURED_IN_CONSUL @YOUR_PUBLIC_ADRESS`
