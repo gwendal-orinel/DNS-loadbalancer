@@ -22,6 +22,7 @@ COPY data/000-default.conf /etc/apache2/sites-available/
 #regenerator files
 COPY data/backups/* /consul/backups/
 COPY data/scripts/* /consul/scripts/
+RUN chmod 655 /consul/scripts/stop_CT.sh
 
 #web files & web settings
 COPY data/webfiles.tar /var/www/
