@@ -78,7 +78,7 @@ curl \
 
 ## Testing service
 `dig ID_OF_YOUR_SERVICE.YOUR_DOMAIN_NAME_CONFIGURED_IN_CONSUL @YOUR_PUBLIC_ADRESS`
-> Check status in SuperMonkey Projects page, if your service is up & running your service will be available through dns response otherwise it will not be.
+> Check the status of service in SuperMonkey Projects page, if your service is up & running your service will be available through dns response otherwise it will not be.
 
 ## Delete service
 ```
