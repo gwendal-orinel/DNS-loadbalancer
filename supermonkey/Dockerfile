@@ -2,7 +2,8 @@ FROM ubuntu
 ENTRYPOINT []
 
 EXPOSE 80
-EXPOSE 8500
+EXPOSE 8501
+EXPOSE 8502
 
 RUN apt-get update -y && \
         apt-get install -qy curl wget jq unzip apache2 libapache2-mod-php php && \
