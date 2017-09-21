@@ -71,3 +71,6 @@ curl \
   }
 }' http://$address:8500/v1/agent/service/register?token=$TOKEN ;done
 ```
+
+## Testing service
+`dig ID_OF_YOUR_SERVICE.YOUR_DOMAIN_NAME_CONFIGURED_IN_CONSUL @YOUR_PUBLIC_ADRESS`
