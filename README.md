@@ -74,3 +74,11 @@ curl \
 
 ## Testing service
 `dig ID_OF_YOUR_SERVICE.YOUR_DOMAIN_NAME_CONFIGURED_IN_CONSUL @YOUR_PUBLIC_ADRESS`
+> Check status in SuperMonkey Projects page, if your service is up & running your service will be available through dns response otherwise it will not be.
+
+## Delete a service
+```
+export PUBLIC_ADRESSES_LIST="12.13.14.15" # Public Address in your Supermonkey settings.json's file
+export TOKEN="fdsq45-sq2z-4b75-9dbf-ae61fdpela76" # Token admin or new generated (via consul token page)
+for address in $PUBLIC_ADRESSES_LIST; do curl http://$address:8500/v1/agent/service/deregister/dns2?token=$TOKEN ;done
+```
