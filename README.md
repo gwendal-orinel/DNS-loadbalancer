@@ -51,7 +51,7 @@ docker run -d --name=supermonkey -h supermonkey --add-host "core:192.168.0.2" --
 ```
 export PUBLIC_ADRESSES_LIST="84.39.37.152" # Public Address in your Supermonkey settings.json's file
 export TOKEN="d59d732a-b790-4b75-9dbf-ae61fef73a76" # Token admin or new generated (via consul token page)
-for i in $PUBLIC_ADRESSES_LIST; do \
+for address in $PUBLIC_ADRESSES_LIST; do \
 curl \
     --request POST \
     --data \
@@ -69,5 +69,5 @@ curl \
 	"TCP": "8.8.4.4:53",
 	"TTL": "0s"
   }
-}' http://$i:8500/v1/agent/service/register?token=$TOKEN ;done
+}' http://$address:8500/v1/agent/service/register?token=$TOKEN ;done
 ```
