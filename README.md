@@ -49,8 +49,8 @@ docker run -d --name=supermonkey -h supermonkey --add-host "core:192.168.0.2" --
 
 ## Add a new service:
 ```
-export PUBLIC_ADRESSES_LIST="84.39.37.152" # Public Address in your Supermonkey settings.json's file
-export TOKEN="d59d732a-b790-4b75-9dbf-ae61fef73a76" # Token admin or new generated (via consul token page)
+export PUBLIC_ADRESSES_LIST="12.13.14.15" # Public Address in your Supermonkey settings.json's file
+export TOKEN="fdsq45-sq2z-4b75-9dbf-ae61fdpela76" # Token admin or new generated (via consul token page)
 for address in $PUBLIC_ADRESSES_LIST; do \
 curl \
     --request POST \
